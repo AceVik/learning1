@@ -1,23 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 
-function App() {
+import { Button } from './components/Button';
+import { Picture } from './components/Picture';
+
+interface AppProps {
+  test: string;
+}
+
+function App({ test }: AppProps) {
+
+  let [currentPicIndex, setCurrentPicIndex] = useState<number>(0); // [value, function]
+
+  const onButtonClick = () => {
+    currentPicIndex++;
+    if (currentPicIndex > 2) {
+      currentPicIndex = 0;
+    }
+
+    setCurrentPicIndex(currentPicIndex);
+  };
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Picture srcIndex={currentPicIndex as 0 | 1 | 2} />
+        <div style={{height: "200px"}}></div>
+        <Button onClick={onButtonClick} label="Click me" />
       </header>
     </div>
   );
