@@ -1,10 +1,12 @@
 # Create a fresh project
 
-## With TypeScript: `yarn create react-app <app-name> --template=typescript`
+### With TypeScript
+`yarn create react-app <app-name> --template=typescript`
 
-## Plain JavaScript: `yarn create react-app <app-name>`
+### Plain JavaScript
+`yarn create react-app <app-name>`
 
-# After project checkout do not forget to run `yarn install`
+### After project checkout do not forget to run `yarn install`
 
 # Getting Started with Create React App
 
